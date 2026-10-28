@@ -47,6 +47,8 @@
         source:
           registry:
             url: "docker://{{ vm_image_source }}"
+            # Primary UDN importer pods cannot reach the default-network registry.
+            pullMethod: node
         pvc:
           accessModes:
             - ReadWriteOnce
